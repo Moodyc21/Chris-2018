@@ -71,23 +71,6 @@ router.post('/', function (req, res, next) {
   }
 })
 
-// GET route after registering
-// router.get('/show', function (req, res, next) {
-//   User.findById(req.session.userId)
-//     .exec(function (error, user) {
-//       if (error) {
-//         return next(error);
-//       } else {
-//         if (user === null) {
-//           const err = new Error('Not authorized! Go back!');
-//           err.status = 400;
-//           return next(err);
-//         } else {
-//           return res.render('users/show', { pageTitle: 'User Profile' })
-//         }
-//       }
-//     });
-// });
 
 router.get('/:userId', (req, res, next) => {
   const userId = req.session.userId
@@ -102,6 +85,7 @@ router.get('/:userId', (req, res, next) => {
       console.log(error)
     })
 })
+
 
 // GET for logout logout
 router.get('/logout', function (req, res, next) {
