@@ -1,0 +1,36 @@
+<div class='navLinks'>
+    <a href="/users"> Home </a> / Register User
+</div>
+
+<div class="registerForm">
+
+    <h2>Register User</h2>
+    <div>
+        <form action="/users" method="POST">
+            <div class="form-input">
+                <label for="email">email</label>
+                <input type="text" name="email" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="username">username</label>
+                <input type="text" name="username" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="password">password</label>
+                <input type="password" name="password" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="passwordconf">Confirm Password</label>
+                <input type="password" name="passwordconf" required/>
+            </div>
+
+            <div class="button-container flex-end">
+                <input class="btn btn-primary" type="submit" value="Register">
+                <a href="/users" class="btn btn-warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

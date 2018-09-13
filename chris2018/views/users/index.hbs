@@ -1,0 +1,25 @@
+<div class='navLinks'>
+    Home
+</div>
+<div class="userContainer">
+    <div class="users">
+        {{#each users}}
+        <a href="/users/{{this._id}}" class="link user">
+            <div class="userImage">
+                {{#if this.photoUrl}}
+                <img src="{{this.photoUrl}}" alt="{{this.username}}'s profile photo"> {{else}}
+                <img src="https://i.imgur.com/3ggmLxE.jpg" alt="{{this.username}}'s profile photo"> {{/if}}
+            </div>
+            <div class="userName">
+                {{this.username}}
+            </div>
+        </a>
+        {{/each}}
+    </div>
+
+    <div class="btn btn-success">
+        <a href="/users/new">
+            Register User
+        </a>
+    </div>
+</div>

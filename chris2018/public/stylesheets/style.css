@@ -1,8 +1,192 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  font-family: 'Righteous', cursive;
+  
 }
 
-a {
-  color: #00B7FF;
+body {
+  background: lightsteelblue;
+  padding: 90px;
+}
+
+.theBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  font-family: "Rubik";
+  font-weight: 700;
+}
+
+h2 {
+  margin: 0px;
+  margin-bottom: 30px;
+}
+
+.appTitle{
+  font-size: 3rem;
+  text-decoration: none;
+  color: black;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.userName {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 500;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.users {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 100px 0;
+}
+
+.skater img {
+  height: 200px;
+  width: 200px;
+  border-radius: 49%;
+  background: white;
+} 
+
+.userImage {
+  padding-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  max-width: 750px;
+}
+
+.container img {
+  height: 256px;
+  width: 256px;
+}
+
+.skaterInfo {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container .button {
+  margin: 0 30px 0 0;
+}
+
+.skaterInfo .visitSkateShop a {
+  color: black;
+  font-size: 2rem;
+  transition: all .25s ease
+}
+
+.skaterInfo .visitSkateShop a:hover{
+  color: #e5bc34;
+}
+
+.page-header {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 70px;
+}
+
+.navBar img {
+  height: 100px;
+  width: 100px;
+}
+
+.registerForm {
+ padding: 100px 0;
+}
+
+.form-input {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.form-input input {
+  width: 85%;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.form-input label {
+  width: 100px;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.skateShopTitle,
+.shops,
+.completeTitle,
+.completes {
+  width: 65%;
+  min-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.completeTitle h3 {
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 1.55rem;
+}
+
+.completes {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.complete {
+  margin: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .skateShopTitle {
+    flex-direction: column;
+  }
 }
