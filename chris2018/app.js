@@ -46,6 +46,17 @@ mongoose.connection.once('open', function () {
   console.log("Mongoose has connected to MongoDB!")
 })
 
+const db = mongoose.connection;
+
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+}));
+
 app.use('/', index);
 app.use('/users', users);
 
