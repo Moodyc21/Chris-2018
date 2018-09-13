@@ -1,0 +1,30 @@
+<div class='navLinks'>
+    <a href="/users"> Home </a> / User
+</div>
+<h1>{{user.username}}</h1>
+<div class="container">
+    <div>
+        {{#if user.photoUrl}}
+        <img src="{{user.photoUrl}}" alt="{{user.username}}'s profile photo"> {{else}}
+        <img src="https://i.imgur.com/3ggmLxE.jpg" alt="{{user.username}}'s profile photo"> {{/if}}
+    </div>
+    <div class="userInfo">
+        <div class="button-container">
+            <div class="btn btn-primary">
+                <a href="/users/{{user._id}}/edit">Edit Skater</a>
+            </div>
+            <div class="btn btn-danger">
+                <a href="/users/{{user._id}}/delete">Delete ME</a>
+            </div>
+        </div>
+        <div>Username:
+            <strong>{{user.username}}</strong>
+        </div>
+        <div>Email:
+            <strong>{{user.email}}</strong>
+        </div>
+        <div class="visitSkateShop">
+            <a href="/users/{{user._id}}/skateShop">Go to SkateShop</a>
+        </div>
+    </div>
+</div>

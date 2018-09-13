@@ -49,7 +49,7 @@ router.post('/', function (req, res, next) {
         return next(error);
       } else {
         req.session.userId = user._id;
-        return res.redirect('/profile');
+        return res.redirect('users/show');
       }
     });
 
@@ -61,7 +61,7 @@ router.post('/', function (req, res, next) {
         return next(err);
       } else {
         req.session.userId = user._id;
-        return res.redirect('/profile');
+        return res.redirect('users/show');
       }
     });
   } else {
@@ -72,7 +72,7 @@ router.post('/', function (req, res, next) {
 })
 
 // GET route after registering
-router.get('/profile', function (req, res, next) {
+router.get('/show', function (req, res, next) {
   User.findById(req.session.userId)
     .exec(function (error, user) {
       if (error) {
@@ -83,11 +83,25 @@ router.get('/profile', function (req, res, next) {
           err.status = 400;
           return next(err);
         } else {
-          return res.send('<h1>Name: </h1>' + user.username + '<h2>Mail: </h2>' + user.email + '<br><a type="button" href="/logout">Logout</a>')
+          return res.render('users/show', { pageTitle: 'User Profile' })
         }
       }
     });
 });
+
+router.get('/:userId', (req, res, next) => {
+  const userId = req.params.userId
+  User.findById(userId)
+    .then((user) => {
+      res.render('users/show', {
+        user,
+        pageTitle: user.name
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+})
 
 // GET for logout logout
 router.get('/logout', function (req, res, next) {
