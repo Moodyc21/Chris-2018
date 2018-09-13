@@ -133,6 +133,10 @@ h2 {
  padding: 100px 0;
 }
 
+.logForm {
+  padding: 100px 0;
+ }
+
 .form-input {
   margin-bottom: 15px;
   display: flex;

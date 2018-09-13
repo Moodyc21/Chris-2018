@@ -1,7 +1,7 @@
 <div class='navLinks'>
     Home
 </div>
-<div class="userContainer">
+{{!-- <div class="userContainer">
     <div class="users">
         {{#each users}}
         <a href="/users/{{this._id}}" class="link user">
@@ -15,7 +15,30 @@
             </div>
         </a>
         {{/each}}
+    </div> --}}
+
+    <div class="logForm">
+
+    <h2>Log In</h2>
+    <div>
+        <form action="/users" method="POST">
+            <div class="form-input">
+                <label for="logemail">email</label>
+                <input type="text" name="logemail" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="logpassword">password</label>
+                <input type="password" name="logpassword" required/>
+            </div>
+
+            <div class="button-container flex-end">
+                <input class="btn btn-primary" type="submit" value="Log In">
+                <a href="/users" class="btn btn-warning">Cancel</a>
+            </div>
+        </form>
     </div>
+</div>
 
     <div class="btn btn-success">
         <a href="/users/new">
